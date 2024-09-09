@@ -9,7 +9,7 @@ class Color(models.Model):
 
 
 class Person(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     age = models.IntegerField()
     color = models.ForeignKey(
         Color, on_delete=models.CASCADE, related_name="persons", null=True, blank=True
